@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang = "en">
+<meta charset = "utf-8">
+<head>
+    <title>Palindrome String</title>
+</head>
+    
+    
+<html>
+    <body>
+        <b><u>Welcome to Palindrome String</u></b>
+        <br>
+        <br>
+        <span>Please enter the phrase u want to check:</span>
+        <br>
+        <input type="text" id="inputPalindrome">
+        <br>
+        <br>
+        <button type="button" onclick="checkPalindrome()">Check Palindrome</button>
+        <br>
+        <br>
+        <br>
+        <span><u>Output:</u></span>
+        <br>
+        <span id="output"></span>
+        <script>
+            function checkPalindrome(){
+                var $userInput = document.getElementById("inputPalindrome").value;
+                var $inputLength = $userInput.length;
+                var $answer = false;
+                $userInput.trim();
+                $userInput = $userInput.toUpperCase();
+                $userInput = $userInput.replace(/\s/g,'');
+                
+                //console.log($userInput);
+                
+                for(var i=0;i<$inputLength/2;i++){
+                    if($userInput[i]==$userInput[$inputLength-i-1]){
+                        $answer = true;
+                    }else{
+                        $answer = false;
+                        i = $inputLength;
+                    }
+                }
+                
+                if($answer){
+                    document.getElementById("output").innerHTML = "It is Palindrome.";
+                }else{
+                    document.getElementById("output").innerHTML = "It is not Palindrome.";
+                }
+                
+                
+            }
+       
+        
+        </script>
+        
+        
+    </body>
+    
+</html>
+    
+    
+
+    
